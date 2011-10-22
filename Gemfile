@@ -17,9 +17,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "npm_assets"
-gem "inherited_resources"
-gem "eco"
+gem 'npm_assets'
+gem 'inherited_resources'
+gem 'eco'
+gem 'twitter-bootstrap-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
