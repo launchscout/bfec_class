@@ -10,3 +10,9 @@
 #= require_tree .
 
 @Cookbook = {}
+
+# $(document).ready(function() { alert "loaded"; });
+# $(function() { alert "loaded"; });
+
+$ ->
+  alert "loaded"
