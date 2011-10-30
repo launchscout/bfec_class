@@ -1,5 +1,9 @@
 beforeEach ->
   jasmine.Ajax.useMock()
+
+  # expect(actual).toRequest
+  #   method: "GET"
+  #   url: "/recipes/2"
   @addMatchers
     toRequest: (expectedRequest) ->
       actualRequest = @actual
