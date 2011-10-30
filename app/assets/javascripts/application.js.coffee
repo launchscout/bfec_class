@@ -12,3 +12,8 @@
 #= require_tree .
 
 @Cookbook = {}
+
+$ ->
+  el = $("#recipe-view")
+  recipeView = new Cookbook.RecipeView(el: el, model: {title:"Pancake", description:"I like pancakes!"})
+  recipeView.render()
