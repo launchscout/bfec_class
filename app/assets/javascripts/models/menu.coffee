@@ -1,0 +1,1 @@
+class Cookbook.Menu extends Backbone.Model

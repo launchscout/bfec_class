@@ -5,6 +5,6 @@ describe "RecipeView", ->
     @view = new Cookbook.RecipeView(el: $('#recipe-view'), model: @recipe)
     @view.render()
   it "displays the title", ->
-    expect($('#recipe-view')).toHaveText(/pancake/)
+    expect($('#recipe-view')).toHaveText(/Pancake/)
   it "displays the description", ->
     expect($('#recipe-view')).toHaveText(/like/)
