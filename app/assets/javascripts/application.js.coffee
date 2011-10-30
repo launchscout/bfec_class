@@ -6,6 +6,8 @@
 #
 #= require jquery
 #= require jquery_ujs
+#= require_npm underscore
+#= require_npm backbone
 #= require_self
 #= require_tree .
 

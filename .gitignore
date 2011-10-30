@@ -6,3 +6,4 @@ tmp/
 vendor/ruby
 bin
 .rbenv-version
+node_modules
