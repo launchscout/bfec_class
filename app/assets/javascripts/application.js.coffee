@@ -12,5 +12,6 @@
 
 $ ->
   el = $("#recipe-view")
-  recipeView = new Cookbook.RecipeView(el: el, model: {title:"Pancake", description:"I like pancakes!"})
+  recipe = new Cookbook.Recipe title:"Pancake", description:"I like pancakes!"
+  recipeView = new Cookbook.RecipeView(el: el, model: recipe)
   recipeView.render()

@@ -1,4 +1,5 @@
 class Cookbook.RecipeView extends Backbone.View
 
   render: ->
-    @el.html "<h1>#{@model.title}</h1><p>#{@model.description}</p>"
+    @el.html "<h2>#{@model.get('title')}</h2>"
+    @$("h2").after "<p>#{@model.get('description')}</p>"
