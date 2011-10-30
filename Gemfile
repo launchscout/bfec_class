@@ -35,3 +35,8 @@ group :test do
   gem 'turn', :require => false
   gem "rspec-rails"
 end
+
+group :test, :development do
+  gem "jasminerice", :git => "git://github.com/bradphelan/jasminerice.git"
+  gem "haml"
+end
