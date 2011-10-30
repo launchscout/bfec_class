@@ -15,6 +15,6 @@
 
 $ ->
   el = $("#recipe-view")
-  recipe = new Cookbook.Recipe title:"Pancake", description:"I like pancakes!"
+  recipe = new Cookbook.Recipe(id: 1)
   recipeView = new Cookbook.RecipeView(el: el, model: recipe)
-  recipeView.render()
+  recipe.fetch(success: -> recipeView.render())
