@@ -1,15 +1,20 @@
 <form>
-  <div class="clearfix">
-    <label for="title">Title</label>
-    <div class="input">
-      <input name="title" value="<%= @model.get("title") %>"/>
+  <fieldset>
+    <div class="clearfix">
+      <label for="title">Title</label>
+      <div class="input">
+        <input name="title" value="<%- @model.get("title") %>"/>
+      </div>
     </div>
-  </div>
-  <div class="clearfix">
-    <label for="description">Description</label>
-    <div class="input">
-      <textarea name="description"><%= @model.get("description")%></textarea>
+    <div class="clearfix">
+      <label for="description">Description</label>
+      <div class="input">
+        <textarea name="description"><%- @model.get("description")%></textarea>
+      </div>
     </div>
+  </fieldset>
+  <div>
+    <input type="submit" class="btn primary" value="Save" />
+    <input type="button" class="btn" value="Cancel">
   </div>
-  
 </form>
