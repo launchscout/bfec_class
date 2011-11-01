@@ -1,6 +1,10 @@
 class Cookbook.RecipesRouter extends Backbone.Router
 
+  routes:
+    "recipes/:id": "showRecipe"
+
   constructor: ->
+    super
     @recipeView = new Cookbook.RecipeView(el: $("#recipe-view"))
 
   showRecipe: (id)->
