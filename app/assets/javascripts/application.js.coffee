@@ -13,9 +13,3 @@
 #= require_tree ../templates
 
 @Cookbook = {}
-
-$ ->
-  el = $("#recipe-view")
-  recipe = new Cookbook.Recipe(id: 1)
-  recipeView = new Cookbook.RecipeView(el: el, model: recipe)
-  recipe.fetch(success: -> recipeView.render())
