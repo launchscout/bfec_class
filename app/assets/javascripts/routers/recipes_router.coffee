@@ -14,7 +14,7 @@ class Cookbook.RecipesRouter extends Backbone.Router
 
   list: ->
     @recipeListView.collection.fetch success: => @recipeListView.render()
-    @recipeListView.collection.bind "change", => @recipeListView.render()
+    @recipeListView.collection.bind "persisted", => @recipeListView.render()
 
   showRecipe: (id) ->
     @recipeView.model = @recipes.get(id)
