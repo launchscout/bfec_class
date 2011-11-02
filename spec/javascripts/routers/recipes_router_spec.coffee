@@ -1,4 +1,2 @@
 describe "RecipesRouter", ->
-  beforeEach ->
-    @router = new Cookbook.RecipesRouter
-    clearAjaxRequests()
+  # moved this to an integration spec
