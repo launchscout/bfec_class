@@ -2,6 +2,7 @@ class Cookbook.RecipeEditView extends Backbone.View
 
   render: ->
     @el.html JST["recipe_edit_view_template"] @
+    @el.show()
 
   events:
     "click input[value=Save]": "save"
