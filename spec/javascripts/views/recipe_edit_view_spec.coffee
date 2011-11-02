@@ -17,15 +17,29 @@ describe "EditRecipeSpec", ->
       @recipeEditView.$("input[name=title]").val("the new title")
       @recipeEditView.$("textarea[name=description]").val("the new description")
       @recipeEditView.save(new jQuery.Event)
-      @request = mostRecentAjaxRequest()
-      @request.response
-        status: 200
-    it "should update the model", ->
-      expect(@recipe.get("title")).toEqual "the new title"
-      expect(@recipe.get("description")).toEqual "the new description"
-    it "posts to the backend", ->
-      expect(@request).toRequest
-        method: "PUT"
-        url: "/recipes/1"
-    it "navigates to the show recipe view on success", ->
-      expect(window.router.navigate).toHaveBeenCalled()
+
+    describe "successfully", ->
+      beforeEach ->
+        @request = mostRecentAjaxRequest()
+        @request.response
+          status: 200
+      it "should update the model", ->
+        expect(@recipe.get("title")).toEqual "the new title"
+        expect(@recipe.get("description")).toEqual "the new description"
+      it "posts to the backend", ->
+        expect(@request).toRequest
+          method: "PUT"
+          url: "/recipes/1"
+      it "navigates to the show recipe view on success", ->
+        expect(window.router.navigate).toHaveBeenCalled()
+
+    describe "with errors", ->
+      beforeEach ->
+        @request = mostRecentAjaxRequest()
+        @request.response
+          status: 422
+          responseText: JSON.stringify(title: ["can't be blank"])
+      it "sets an error class on the clearfix div", ->
+        expect(@recipeEditView.$("div.clearfix:first")).toHaveClass "error"
+      it "should display the error message as inline help", ->
+        expect(@recipeEditView.$("span.help-inline").html()).toMatch /can.t be blank/
