@@ -10,6 +10,8 @@ describe "EditRecipeSpec", ->
 
   describe "saving", ->
     beforeEach ->
+      window.router =
+        navigate: ->
       spyOn(window.router, "navigate")
       @recipeEditView.render()
       @recipeEditView.$("input[name=title]").val("the new title")

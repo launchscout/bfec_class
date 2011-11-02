@@ -3,6 +3,7 @@ class Cookbook.RecipesRouter extends Backbone.Router
   routes:
     "recipes/:id": "showRecipe"
     "recipes/:id/edit": "editRecipe"
+    "recipes": "list"
 
   constructor: ->
     super
