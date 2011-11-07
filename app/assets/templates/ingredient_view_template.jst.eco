@@ -1,4 +1,4 @@
-<span class="display"><%= @model.get('description') %></span>
+<span class="display"><%= @model.get('description') %> (<a class="deleteIngredient" href="#">Delete</a>)</span>
 <span class="edit" style="display: none;">
   <input type="text" name="description" value="<%- @model.get('description') %>" />
   <input type="button" value="Save" id="save" />
