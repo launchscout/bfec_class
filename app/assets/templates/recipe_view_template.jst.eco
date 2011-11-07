@@ -2,3 +2,4 @@
 <p><%= @model.get('description') %></p>
 
 <a href="#recipes/<%= @model.get('id') %>/edit">edit</a>
+<a href="#" id="deleteRecipe">delete</a>
