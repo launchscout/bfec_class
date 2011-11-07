@@ -1,0 +1,1 @@
+class Cookbook.Ingredient extends Backbone.Model

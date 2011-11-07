@@ -1,7 +1,7 @@
 describe "Ingredients Collection", ->
   beforeEach ->
     @recipe = new Cookbook.Recipe(id: 1)
-    @ingredients = new Cookbook.Ingredients(@recipe)
+    @ingredients = new Cookbook.Ingredients([], recipe: @recipe)
 
   describe "fetching", ->
     beforeEach ->
