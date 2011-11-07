@@ -22,3 +22,11 @@ describe "RecipeView", ->
         url: "/recipes/1"
     it "hides the view", ->
       expect(@view.el).toBeHidden()
+
+  describe "ingredients", ->
+    beforeEach ->
+      @ingredient = new Cookbook.Ingredient(description: "1 cup goo")
+      @recipe.ingredients = new Cookbook.Ingredients([@ingredient], recipe: @recipe)
+      @view.render()
+    it "puts the ingredients in a list", ->
+      expect(@view.$("ul li:first").html()).toMatch(/goo/)
