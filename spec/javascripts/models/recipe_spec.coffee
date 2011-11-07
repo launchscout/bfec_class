@@ -21,3 +21,9 @@ describe "Recipe", ->
       expect(@request).toRequest
         method: "GET"
         url: "/recipes/2"
+
+  describe "ingredients", ->
+    beforeEach ->
+      @ingredients = @recipe.ingredients
+    it "instantiates an ingredients collection", ->
+      expect(@ingredients.constructor.name).toEqual("Ingredients")
