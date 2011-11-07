@@ -21,15 +21,16 @@ class Cookbook.RecipesRouter extends Backbone.Router
     @recipeView.model = @recipes.get(id)
     @recipeEditView.el.hide()
     @recipeView.render()
+    @recipeView.model.ingredients.fetch success: => @recipeView.render()
 
   newRecipe: ->
     @recipeView.el.hide()
     newRecipe = new Cookbook.Recipe()
-    newRecipe.bind "persisted", => 
+    newRecipe.bind "persisted", =>
       @recipes.add(newRecipe)
     @recipeEditView.model = newRecipe
     @recipeEditView.render()
-    
+
   editRecipe: (id) ->
     @recipeEditView.model = @recipes.get(id)
     @recipeView.el.hide()
