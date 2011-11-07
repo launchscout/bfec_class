@@ -30,7 +30,14 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+group :development do
+  gem "bfec_generator"
+end
+
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+
+gem "npm_assets"
+gem "jasminerice", :git => "git://github.com/bradphelan/jasminerice.git"
