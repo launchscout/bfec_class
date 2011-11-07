@@ -8,3 +8,17 @@ describe "RecipeView", ->
     expect($('#recipe-view')).toHaveText(/pancake/)
   it "displays the description", ->
     expect($('#recipe-view')).toHaveText(/like/)
+
+  describe "deleting", ->
+    beforeEach ->
+      @view.model.set(id: "1")
+      @view.delete()
+      @request = mostRecentAjaxRequest()
+      @request.response
+        status: 200
+    it "DELETEs to the backend", ->
+      expect(@request).toRequest
+        method: "DELETE"
+        url: "/recipes/1"
+    it "hides the view", ->
+      expect(@view.el).toBeHidden()
