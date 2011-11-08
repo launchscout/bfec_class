@@ -2,6 +2,7 @@ class Cookbook.MenusRouter extends Backbone.Router
 
   routes:
     "menus/:id": "showMenu"
+    "menus": "list"
 
   constructor: ->
     super
