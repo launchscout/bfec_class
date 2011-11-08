@@ -9,7 +9,7 @@ class Cookbook.RecipesRouter extends Backbone.Router
     @recipeListView = new Cookbook.RecipeListView(el: $("#recipe-list-view"))
     @recipeListView.collection = new Cookbook.Recipes
 
-  listRecipes: ->
+  list: ->
     @recipeListView.collection.fetch success: => @recipeListView.render()
 
   showRecipe: (id)->
