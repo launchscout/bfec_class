@@ -5,3 +5,9 @@ describe "Menu", ->
     expect(@menu.get('title')).toEqual("Breakfast")
   it "has a description", ->
     expect(@menu.get('description')).toMatch(/important/)
+
+  describe "setters", ->
+    beforeEach ->
+      @menu.set(title: "flapjacks")
+    it "changes the attribute", ->
+      expect(@menu.get('title')).toEqual("flapjacks")
