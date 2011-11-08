@@ -2,3 +2,5 @@
 #= require mock-ajax
 #= require ajax_matcher
 #= require_tree .
+
+Cookbook.Ready = ->
