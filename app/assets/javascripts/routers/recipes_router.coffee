@@ -25,11 +25,11 @@ class Cookbook.RecipesRouter extends Backbone.Router
   newRecipe: ->
     @recipeView.el.hide()
     newRecipe = new Cookbook.Recipe()
-    newRecipe.bind "persisted", => 
-      @recipes.add(newRecipe)
+    newRecipe.bind "persisted", =>
+      @recipes.add(newRecipe) unless @recipes.include(newRecipe)
     @recipeEditView.model = newRecipe
     @recipeEditView.render()
-    
+
   editRecipe: (id) ->
     @recipeEditView.model = @recipes.get(id)
     @recipeView.el.hide()

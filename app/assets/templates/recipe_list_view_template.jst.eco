@@ -2,5 +2,5 @@
 <% for model in @collection.models: %>
 <li><a href="#recipes/<%= model.get('id') %>"><%= model.get('title') %></a></li>
 <% end %>
-<a href="#recipes/new">New Recipe</a>
 </ul>
+<a href="#recipes/new">New Recipe</a>
